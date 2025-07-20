@@ -31,7 +31,12 @@ main_menu.add(KeyboardButton("📄 PDF fayl"))
 async def start_handler(message: Message):
     await message.answer(
         "🇰🇷 Assalomu alaykum!\nPDF faylni olish uchun quyidagi tugmani bosing:",
-        reply_markup=main_menu
+        reply_markup=ReplyKeyboardMarkup(
+            keyboard=[
+                [KeyboardButton(text="📄 PDF fayl")]
+            ],
+            resize_keyboard=True
+        )
     )
 
 @dp.message(F.text == "📄 PDF fayl")
