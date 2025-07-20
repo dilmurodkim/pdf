@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: pdf
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: BOT_TOKEN
+        value: your_bot_token_here
+      - key: RENDER_EXTERNAL_HOSTNAME
+        value: koreys-tili-bot.onrender.com
+      - key: PORT
+        value: 10000
